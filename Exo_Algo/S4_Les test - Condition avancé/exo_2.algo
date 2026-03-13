@@ -1,0 +1,23 @@
+Exercice 4.2
+
+DEBUT
+	VARIABLES heures, minutes en NUMERIQUE
+ 
+	Ecrire "Indique l'heure [0-23] :"
+	Lire heures
+	Ecrire "Indique le nombre de minutes [0-59] :"
+	Lire minutes
+	
+	minutes <- minutes + 1
+	SI minutes = 59 ALORS
+		heures <- heures + 1
+		minutes <- 0	
+	
+		SI heures = 23 ALORS
+			heures <- 0
+		FINSI	
+
+	FINSI
+
+	Ecrire "Au prochain top, il sera " & heures  & ":" & minute
+FIN

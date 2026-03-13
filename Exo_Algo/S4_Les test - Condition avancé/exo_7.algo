@@ -1,0 +1,29 @@
+Exercice 4.6
+
+Début
+    Variables 
+        annee, mois, jour, max_jour en entier
+        année_bis en bool
+
+    année_bis <- faux
+    Si (a dp 400) ou ((a dp 4) et NON(a dp 100)) Alors
+        année_bis <- vrai
+    FinSi
+
+    Si m < 1 ou m > 12 Alors
+        ecrire "Date invalide"
+    Sinon
+        Si m = 2 Alors
+            Si année_bis Alors
+                max_jour <- 29
+            Alors   
+                max_jour <- 28
+            FinSi
+
+        Si jour >= 1 et j <= max_jour Alors
+            ecrire "Date valide"
+        Sinon   
+            ecrire "Date invalide"
+        FinSi  
+    FinSi        
+Fin

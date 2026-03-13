@@ -1,0 +1,123 @@
+Exercices : Les tests
+
+Serie 3 : Condition simple
+
+Exercice 3.2
+
+DEBUT
+	VARIABLES nombre_a, nombre_b EN NUMERIQUE
+	ECRIRE "Entrez une premier valeur : "
+	LIRE nombre_a
+	ECRIRE "Entrez une seconde valeur : "
+	LIRE nombre_b
+
+	SI (nombre_a < 0 ET nombre_b < 0) OU (nombre_a > 0 ET nombre_b > 0) ALORS
+		ECRIRE "Le nombre et positif."
+	ALORS
+		ECRIRE "Le nombre et négatif."
+	FINSI
+FIN
+
+Exercice 3.3
+
+DEBUT
+	VARIABLES nom_1, nom_2, nom_3 EN TEXT
+	ECRIRE "Ecris un premier nom : "
+	LIRE nom_1
+	ECRIRE "Ecris un deuxième nom : "
+	LIRE nom_2
+	ECRIRE "Ecris un troisième nom : "
+	LIRE nom_3
+	
+	ECRIRE "Les nom sont rentre dans l'ordre " & (nom_1 < nom_2 ET nom_2 < nom_3) ? classer : desordre
+FIN
+
+Exercice 3.4
+
+DEBUT
+	VARIABLES nombre EN NUMERIQUE
+	ECRIRE "Donnez un nombre: "
+	LIRE nombre
+	
+	SI nombre = 0 ALORS
+		ECRIRE "Veuillez entre un nombre plus grand que zéro."
+	SINONSI nombre > 0 ALORS
+		ECRIRE "Le nombre est positif."
+	SINON
+		ECRIRE "Le nombre est négatif."
+	FINSI
+FIN
+
+Exercice 3.5
+
+DEBUT
+	VARIABLES nombre_a, nombre_b EN NUMERIQUE
+	ECRIRE "Entrez une premier valeur : "
+	LIRE nombre_a
+	ECRIRE "Entre une seconde valeur : "
+	LIRE nombre_b
+	
+	SI nombre_a = 0 OU nombre_b = 0 ALORS
+		ECRIRE "Le produit est zéro."
+	SINONSI (nombre_a < 0 ET nombre_b < 0) OU (nombre_a > 0 ET nombre_b > 0) ALORS
+		ECRIRE "Le nombre et positif."
+	ALORS
+		ECRIRE "Le nombre et négatif."
+	FINSI
+FIN
+
+Exercice 3.6
+
+DEBUT
+	VARRIABLES age EN NUMERIQUE
+	ECRIRE "Entrez un âge :"
+	LIRE age
+	
+	niveau <- ""
+	SI age >= 12 ALORS
+		niveau <- "Poussin"
+	SINONSI age >= 10 ALORS
+		niveau <- "Pupille"
+	SINONSI age >= 8 ALORS
+		niveau <- "Minime"
+	SINONSI age => 6 ALORS
+		niveau <- "Cadet"
+	FINSI
+
+	ECRIRE niveau
+FIN
+
+Exercice 3.6.1
+
+DEBUT 
+	VARIABLE age, compteur EN NUMERIQUE
+	VARIABLE tranche_age, niveau EN TABLEAU
+	ECRIRE "Entrez un âge :"
+	LIRE age
+	
+	compteur <- 0
+	tranche_age[0] <- 12
+	tranche_age[1] <- 10
+	tranche_age[2] <- 8
+	tranche_age[3] <- 6
+
+	niveau[0] <- "Cadet"
+	niveau[1] <- "Minime"
+	niveau[2] <- "Pupille"
+	niveau[3] <- "Poussin"
+
+	TANTQUE compteur < LONGEUR(tranche_age)		
+		SI age >= tranche_age[compteur] ALORS 
+			ECRIRE niveau[compteur]
+			SORTIR
+		FINSI
+		compteur <- compteur + 1
+	TANTQUEFIN
+
+	TantQue compteur < LONGEUR(tranche_age) ET age < tranche_age[compteur]
+FIN
+
+
+
+
+		 

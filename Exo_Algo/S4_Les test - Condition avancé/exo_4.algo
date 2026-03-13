@@ -1,0 +1,27 @@
+Exercice 4.4
+
+Variable n en entier
+Variable montant en decimal
+
+Début
+    Ecrire "Nombre de photocopies ?"
+    Lire n
+
+    Si n <= 10 Alors
+        montant <- n * 0,20
+    SinonSi n <= 30 Alors
+        montant <- 10 * 0,20 + (n - 10) * 0,10
+    Sinon
+        montant <- 10 * 0,20 + 20 * 0,10 + (n - 30) * 0,05
+    FinSi
+
+    Ecrire "Montant total : " & montant & " €"
+Fin
+
+
+
+
+
+
+	
+	

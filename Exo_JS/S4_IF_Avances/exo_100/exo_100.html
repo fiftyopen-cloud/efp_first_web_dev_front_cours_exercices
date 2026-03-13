@@ -1,0 +1,21 @@
+// initiatialisation des tiges
+tiges[0] = [6, 5, 4, 3, 2, 1];
+tiges[1] = [];
+tiges[2] = [];
+let i = 1; // index de la tige courante
+
+function deplacer_disque(disque) {
+    if (i == 3) i = 1;
+
+    disque
+
+    if (tiges[i].length > 0 ) {
+        let disque = tiges[i].pop();
+        console.log("Déplacement du disque " + disque);
+        deplacer_disque(i++, disque);
+    } else if (tiges[tiges[i].length] < 0) {
+        tiges[i].push(disque);
+         console.log("Déplacement du disque " + disque);
+        
+    }
+}

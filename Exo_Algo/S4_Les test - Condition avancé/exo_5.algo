@@ -1,0 +1,19 @@
+Exercice 4.5
+
+DEBUT
+    VARIABLES c1, c2, c3, c4 EN ENTIER
+    
+    LIRE c1, c2, c3, c4
+    
+    SI c[1] > 50 ALORS
+        ECRIRE "Elu"  
+    SINONSI c[1] < 12.5 ALORS
+            ECRIRE "Battu"
+    SINON 
+        SI (c[1] >= c[2] ET c[1] >= c[3] ET c[1] >= c[4]) ALORS
+            ECRIRE "Continue en deuxième tour avec ballottage favorable"
+        SINON
+             ECRIRE "Continue en deuxième tour avec ballottage défavorable"
+        FINSI
+    FINSI
+FIN

@@ -1,0 +1,50 @@
+Exercice 2.3
+DEBUT
+	VARIABLES $taco EN NUMERIQUE
+	$taco <- 8
+	ECRIRE "Combien de taco voulez-vous :"
+	LIRE $nombre
+
+	ECRIRE "Le montant est " & $nombre * $taco & "€"
+FIN
+
+Exercice 2.4
+DEBUT
+	VARIABLES $prix_ht, $quantité, $tva EN NUMERIQUE
+	ECRIRE "Indiquer le prix de l'article :"
+	LIRE $prix_ht
+	ECRIRE "Indiquer la quantité :"
+	LIRE $quantité
+	ECRIRE "Indiquer la tva :"
+	LIRE $tva
+
+	ECRIRE "Le montant a payer est : " & $prix_ht * $quantité * $tva & "€"
+FIN
+
+Exercice 2.5
+DEBUT
+	VARIABLES $prenom EN CARACTERE, $age EN NUMERIQUE
+	ECRIRE "Ecris ton prénom :"
+	LIRE $prenom
+	ECRIRE "Quel est ton âge :"
+	LIRE $age
+	
+	ECRIRE "Bonjour " & $prenom & ", tu as " & $age & " ans."
+FIN
+
+Exercice 2.6
+DEBUT
+	VARIABLES $minutes, $heures EN NUMERIQUE
+	ECRIRE "Donne une durée en minute : "
+	LIRE $minutes
+	$heures <- ARRONDI($minutes / 60)
+	$minutes <- $minutes - $heures * 60
+	ECRIRE $minutes & " minute = " & $heures & "h " & $minute & "min" 
+FIN
+
+
+
+
+
+
+

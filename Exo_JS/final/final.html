@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Final</title>
+</head>
+<body>
+    <script src="final.js"></script>
+    <script>
+        console.group("Tests pour extractAlternateChars");
+            console.assert(extractAlternateChars("abcdefg") === "aceg");
+            console.assert(extractAlternateChars("1234567890") === "13579");   
+        console.groupEnd();
+
+        console.group("Tests pour isFortyTwoOrSum");
+            console.assert(isFortyTwoOrSum(40, 2) === true);
+            console.assert(isFortyTwoOrSum(42, 0) === true);
+            console.assert(isFortyTwoOrSum(20, 22) === true);
+            console.assert(isFortyTwoOrSum(10, 10) === false);
+        console.groupEnd();
+
+        console.group("Tests pour exceedsZeroThreshold");
+            console.assert(exceedsZeroThreshold(0, 0, 0, 0, 0) === true);
+            console.assert(exceedsZeroThreshold(1, 2, 3, 4, 5) === false);
+            console.assert(exceedsZeroThreshold(0, 0, 0, 0) === false);
+            console.assert(exceedsZeroThreshold(0, 0, 0, 0, 0, 0) === true);
+        console.groupEnd();
+
+        console.group("Tests pour celsiusToFahrenheit");
+            console.assert(celsiusToFahrenheit(0) === 32);
+            console.assert(celsiusToFahrenheit(100) === 212);
+            console.assert(celsiusToFahrenheit(-40) === -40);
+            console.assert(celsiusToFahrenheit(37) === 98.6);
+        console.groupEnd();
+
+        console.group("Tests pour getPositives");
+            console.assert(getPositives(1, -2, 3, 0, -5, 6).toString() === "1,3,6");
+            console.assert(getPositives(-1, -2, -3, -4).toString() === "");
+            console.assert(getPositives(0, 0, 0, 0).toString() === "");
+            console.assert(getPositives(1, 2, 3, 4, 5).toString() === "1,2,3,4,5");
+        console.groupEnd();
+
+        console.group("Tests pour sumDigits");
+            console.assert(sumDigits(123) === 6);
+            console.assert(sumDigits(456) === 15);
+            console.assert(sumDigits(789) === 24);
+            console.assert(sumDigits(0) === 0);
+        console.groupEnd();
+
+        console.group("Tests for shiftArrayLeft");
+            console.group("Tests for shiftArrayLeft with shift/push");
+                console.assert(shiftArrayLeft(1, 2, 3, 4, 5).toString() === "2,3,4,5,1");
+                console.assert(shiftArrayLeft(10, 20, 30).toString() === "20,30,10");
+                console.assert(shiftArrayLeft(7).toString() === "7");
+                console.assert(shiftArrayLeft().toString() === "");
+            console.groupEnd();
+            
+            console.group("Tests for shiftArrayLeftAlt without shift/push");
+                console.assert(shiftArrayLeftAlt(1, 2, 3, 4, 5).toString() === "2,3,4,5,1");
+                console.assert(shiftArrayLeftAlt(10, 20, 30).toString() === "20,30,10");
+                console.assert(shiftArrayLeftAlt(7).toString() === "7");
+                console.assert(shiftArrayLeftAlt().toString() === "");
+            console.groupEnd();
+        console.groupEnd();
+
+        console.group("Tests for concatenateArrays");
+            console.assert(concatenateArrays([1, 2], [3, 4]).toString() === "1,2,3,4");
+            console.assert(concatenateArrays([], [5, 6]).toString() === "5,6");
+            console.assert(concatenateArrays([7, 8], []).toString() === "7,8");
+            console.assert(concatenateArrays([], []).toString() === "");
+        console.groupEnd();
+
+        console.group("Tests for getSymmetricDifference");
+            console.assert(getSymmetricDifference([1, 2, 3], [3, 4, 5]).toString() === "1,2,4,5");
+            console.assert(getSymmetricDifference([], [1, 2, 3]).toString() === "1,2,3");
+            console.assert(getSymmetricDifference([1, 2, 3], []).toString() === "1,2,3");
+            console.assert(getSymmetricDifference([], []).toString() === "");
+        console.groupEnd();
+
+        console.group("Tests for sumDelimitedValues");
+            console.assert(sumDelimitedValues("1,2,3") === 6);
+            console.assert(sumDelimitedValues("4,5,6") === 15);
+            console.assert(sumDelimitedValues("7,8,9") === 24);
+            console.assert(sumDelimitedValues("") === 0);   
+        console.groupEnd();
+
+        console.group("Tests for getMatrixColumn");
+            const matrix1 = [
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ];
+            console.assert(getMatrixColumn(matrix1, 0).toString() === "1,4,7");
+            console.assert(getMatrixColumn(matrix1, 1).toString() === "2,5,8");
+            console.assert(getMatrixColumn(matrix1, 2).toString() === "3,6,9");
+            console.assert(getMatrixColumn(matrix1, 3).toString() === ""); // Out of bounds
+        console.groupEnd();
+
+        console.group("Tests for parseBinary");
+            console.assert(parseBinary("1010") === 10);
+            console.assert(parseBinary("1111") === 15);
+            console.assert(parseBinary("1001") === 9);
+            console.assert(parseBinary("0") === 0);
+        console.groupEnd();
+        
+
+    </script>
+</body>
+</html>

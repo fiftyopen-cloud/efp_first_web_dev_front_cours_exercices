@@ -1,0 +1,40 @@
+Exercice 4.6
+// tarif 1 = bleu, 2 = vert, 3 = orange, 4 = rouge
+Début
+	Variable age, permit, accident, anciennete, tarif en entier
+	Variable refuse en bit
+	Lire age, permit, accident, anciennete
+
+	refuse <- 0
+	Si age < 35 et permit >= 2 ou age >= 35 et permit < 2 alors
+		Si accident = 0 alors 
+			tarif <- 3	
+		SinonSi accident = 1 alors 
+			tarif <- 4
+		SinonSi accident > 1 alors
+			refuse <- 1
+		FinSi
+
+	SinonSi age < 35 et permit < 2 ALORS
+		Si accident = 0 alors 
+			tarif <- 4
+		Sinon 
+			refuse <- 1
+		FinSi
+	Sinon 
+		Si accident = 0 alors 
+			tarif <- 2	
+		SinonSi accident = 1 alors 
+			tarif <- 3
+		SinonSi accident = 2 alors
+			tarif <- 4
+		Sinon
+			refuse <- 1
+		FinSi
+	FinSi
+
+	// Bonus fidèlité
+	Si not refuse et permit > 1 et tarif => 1 alors 
+		tarif <- tarif - 1
+	FinSi 
+Fin

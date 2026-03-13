@@ -1,0 +1,195 @@
+Exercices : Les tests
+
+Serie 4: Condition avancées
+
+Exercice 4.1
+
+DEBUT
+	VARIABLES TUTO EN NUMERIQUE
+
+	Si Tutu < Toto + 4 ET Tata <> "OK" Alors
+    		Tutu ← Tutu + 1
+	Sinon
+		Tutu ← Tutu – 1
+	FinSi
+FIN
+
+Exercice 4.2
+
+DEBUT
+	VARIABLES heures, minutes en NUMERIQUE
+ 
+	Ecrire "Indique l'heure [0-23] :"
+	Lire heures
+	Ecrire "Indique le nombre de minutes [0-59] :"
+	Lire minutes
+	
+	minutes <- minutes + 1
+	SI minutes = 59 ALORS
+		heures <- heures + 1
+		minutes <- 0	
+	
+		SI heures = 23 ALORS
+			heures <- 0
+		FINSI	
+
+	FINSI
+
+	Ecrire "Au prochain top, il sera " & heures  & ":" & minute
+FIN
+
+Exercice 4.3
+
+DEBUT
+	VARIABLES heures, minutes, secondes EN NUMERIQUE	
+	Ecrire "Indique l'heure [0-23] :"
+	Lire heures
+	Ecrire "Indique le nombre de minutes [0-59] :"
+	Lire minutes
+	Ecrire "Indique le nombre de seconde [0-59] :"
+	Lire secondes
+
+	secondes <- secondes + 1
+	SI secondes = 60 ALORS
+		secondes <- 0
+		minutes <- minutes + 1
+		
+		SI minutes = 60 ALORS
+			minutes <- 0
+			heures <- heures + 1		
+			
+			SI heures = 24 ALORS
+				heures <- 0
+			FINSI	
+		FINSI
+	FINSI
+
+	Ecrire "Au prochain top, il sera " & heures & "h" & minutes & "m" & secondes
+
+FIN
+
+DEBUT
+    VARIABLES h, m, s, total_s EN NUMERIQUE	
+    LIRE h, m, s
+
+    // 1. Convertir tout en secondes et ajouter 1
+    total_s <- (h * 3600 + m * 60 + s + 1) MOD 86400
+
+    // 2. Reconvertir le total en h, m, s
+    h <- total_s / 3600
+    m <- (total_s MOD 3600) / 60
+    s <- total_s MOD 60
+
+    ECRIRE "Il sera " & h & "h" & m & "m" & s
+FIN
+
+Exercice 4.3
+
+DEBUT
+	VARIABLES total, nombre_photocopie EN NUMERIQUE
+	ECRIRE "Combien de photocopies avez vous faites :"
+	LIRE nombre_photocopies
+
+	total <- 0
+	SI nombre_photocopies > 10 ALORS
+		total <- total + 2
+		nombre_photocopies <- nombre_photocopies - 10
+
+		SI nombre_photocopies > 20 ALORS
+			total <- total + 2
+			nombre_photocopies <- nombre_photocopies - 20
+			
+			total <- total + nombre_photocopies * 0.05
+	
+			ECRIRE "Le montant est de " & total & " pour nombre_photocopies copies."
+
+		FINSI
+	ELSE
+		ECRIRE "Le montant est de " & nombre_photocopies * 0.05 & " pour nombre_photocopies 				copies."
+	FINSI
+FIN
+
+Exercice 4.4
+
+DEBUT
+	VARIABLES age EN ENTIER
+	VARIABLES genre EN TEXT
+	VARIABLES peux_voter EN BOOLEAN
+	ECRIRE "Donne un genre [DRAXX, Sklounst, Autre]" 
+	LIRE age
+	ECRIRE "Donne son age"
+	LIRE genre
+
+	peut_voter <- true
+	
+	peut_voter <- age > 18 ET age < 35 ET GENRE = Sklounst 
+	peut_voter <- age = 1835 ET genre = DRAXX
+		
+	ECRIRE peut_voter ? "Peux voter." : "Ne peux pas voter."
+	
+FIN
+		
+
+C1       C2      C3      C4      Elu   	Battu	 Dxt
+50		                  1	  0	  0
+12,5    12,5     25      50	  0       0	  1
+6	19	 25	 50	  0	  1       0
+	
+
+DEBUT
+	VARIABLE C1, C2, C3, C4 EN NUMERIQUE
+	
+	SI C1 < 50 ALORS
+		SI  ALORS
+  
+		SI C1 > C2  C1 > C3 ET C1 > C4 ALORS
+
+	SINON
+		ELU   
+		
+FIN
+
+
+Exercice 4.6
+
+Début
+	Variable age, permit, accident, anciennete en entier
+	Lire age, permit, accident, anciennete
+	
+	Si age < 35 et permit >= 2 ou age >= 35 et permit < 2 alors
+		Si accident = 0 alors 
+			Ecrire "rouge"	
+		SinonSi accident = 1 alors 
+			Ecrire "orange"
+		Sinon
+			Ecrire "refusé"
+		FinSi
+	SinonSi age < 35 et permit < 2 ALORS
+		Si accident > 0 alors 
+			Ecrire "refusé"
+		Sinon 
+			Ecrire "rouge"
+		FinSi
+	Sinon 
+		Si accident = 0 alors 
+			Ecrire "vert"	
+		SinonSi accident = 1 alors 
+			Ecrire "orange"
+		SinonSi accident = 2 alors
+			Ecrire "rouge"
+		Sinon
+			Ecrire "refusé"
+		FinSi
+	FinSi
+Fin
+
+
+
+
+
+
+
+
+
+
+

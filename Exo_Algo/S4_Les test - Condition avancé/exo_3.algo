@@ -1,0 +1,78 @@
+Exercice 4.3
+
+DEBUT
+	VARIABLES heures, minutes, secondes EN NUMERIQUE	
+	Ecrire "Indique l'heure [0-23] :"
+	Lire heures
+	Ecrire "Indique le nombre de minutes [0-59] :"
+	Lire minutes
+	Ecrire "Indique le nombre de seconde [0-59] :"
+	Lire secondes
+
+	secondes <- secondes + 1
+	SI secondes = 60 ALORS
+		secondes <- 0
+		minutes <- minutes + 1
+		
+		SI minutes = 60 ALORS
+			minutes <- 0
+			heures <- heures + 1		
+			
+			SI heures = 24 ALORS
+				heures <- 0
+			FINSI	
+		FINSI
+	FINSI
+
+	Ecrire "Au prochain top, il sera " & heures & "h" & minutes & "m" & secondes
+
+FIN
+
+DEBUT
+    VARIABLES h, m, s, total_s EN NUMERIQUE	
+    LIRE h, m, s
+
+    // 1. Convertir tout en secondes et ajouter 1
+    total_s <- (h * 3600 + m * 60 + s + 1) MOD 86400
+
+    // 2. Reconvertir le total en h, m, s
+    h <- total_s / 3600
+    m <- (total_s MOD 3600) / 60
+    s <- total_s MOD 60
+
+    ECRIRE "Il sera " & h & "h" & m & "m" & s
+FIN
+
+Exercice 4.4
+
+DEBUT
+	VARIABLES total, nombre_photocopie EN NUMERIQUE
+	ECRIRE "Combien de photocopies avez vous faites :"
+	LIRE nombre_photocopies
+
+	total <- 0
+	SI nombre_photocopies > 10 ALORS
+		total <- total + 2
+		nombre_photocopies <- nombre_photocopies - 10
+
+		SI nombre_photocopies > 20 ALORS
+			total <- total + 2
+			nombre_photocopies <- nombre_photocopies - 20
+			
+			total <- total + nombre_photocopies * 0.05
+	
+			ECRIRE "Le montant est de " & total & " pour nombre_photocopies copies."
+
+		FINSI
+	ELSE
+		ECRIRE "Le montant est de " & nombre_photocopies * 0.20 & " pour nombre_photocopies 				copies."
+	FINSI
+FIN
+
+
+
+
+
+
+	
+	
