@@ -1,6 +1,6 @@
 document.addEventListener('click', evenment);
 
-function getTotal(reset = false) {
+function updateUI(reset = false) {
     let allArticles = document.querySelectorAll('article');
     let total = 0;
     let i = 0;
@@ -16,7 +16,7 @@ function getTotal(reset = false) {
         
         ++i;
     }
-    
+
     document.getElementById('total').innerText = total;
 }
 
@@ -26,8 +26,7 @@ function evenment(e) {
         let article = e.target.closest('article');
         let strong = article.querySelector('.value');
         strong.innerText = parseInt(strong.textContent) + 1;
-        getTotal();
     }
 
-    getTotal(e.target.id === 'reset');
+    updateUI(e.target.id === 'reset');
 }
